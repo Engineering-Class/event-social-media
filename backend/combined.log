@@ -1,0 +1,162 @@
+{"level":"warn","message":"Login failed: Incorrect password for user \"Mon1\".","service":"user-service","timestamp":"2024-11-22 19:08:56"}
+{"level":"warn","message":"Login failed: Incorrect password for user \"Mon1\".","service":"user-service","timestamp":"2024-11-22 19:08:58"}
+{"level":"info","message":"MongoDB connected","service":"user-service","timestamp":"2024-11-22 19:09:35"}
+{"level":"info","message":"Server running on port 5000","service":"user-service","timestamp":"2024-11-22 19:09:35"}
+{"level":"warn","message":"Login failed: Incorrect password for user \"Roberto\".","service":"user-service","timestamp":"2024-11-22 19:09:36"}
+{"level":"info","message":"Password reset email sent to \"klasaa12b@gmail.com\".","service":"user-service","timestamp":"2024-11-22 19:11:08"}
+{"level":"warn","message":"Password reset failed: Invalid or missing token.","service":"user-service","timestamp":"2024-11-22 19:11:17"}
+{"level":"warn","message":"Password reset failed: Invalid or missing token.","service":"user-service","timestamp":"2024-11-22 19:11:20"}
+{"level":"warn","message":"Password reset failed: Invalid or missing token.","service":"user-service","timestamp":"2024-11-22 19:12:44"}
+{"level":"info","message":"MongoDB connected","service":"user-service","timestamp":"2024-11-22 19:14:28"}
+{"level":"info","message":"Server running on port 5000","service":"user-service","timestamp":"2024-11-22 19:14:28"}
+{"level":"info","message":"MongoDB connected","service":"user-service","timestamp":"2024-11-22 19:14:35"}
+{"level":"info","message":"Server running on port 5000","service":"user-service","timestamp":"2024-11-22 19:14:35"}
+{"level":"info","message":"Password reset email sent to \"klasaa12b@gmail.com\".","service":"user-service","timestamp":"2024-11-22 19:14:59"}
+{"level":"info","message":"Password reset email sent to \"klasaa12b@gmail.com\".","service":"user-service","timestamp":"2024-11-22 19:15:55"}
+{"level":"info","message":"Password reset email sent to \"kalsaa12b@gmail.com\".","service":"user-service","timestamp":"2024-11-22 19:17:38"}
+{"level":"warn","message":"Registration failed: Username or email already exists","service":"user-service","timestamp":"2024-11-22 19:18:38"}
+{"level":"info","message":"User registered successfully: Roberto","service":"user-service","timestamp":"2024-11-22 19:18:52"}
+{"level":"warn","message":"Email verification failed: Invalid token or user already verified.","service":"user-service","timestamp":"2024-11-22 19:18:59"}
+{"level":"info","message":"User \"Roberto\" email verified successfully.","service":"user-service","timestamp":"2024-11-22 19:19:24"}
+{"level":"info","message":"User \"Roberto\" logged in successfully.","service":"user-service","timestamp":"2024-11-22 19:22:08"}
+{"level":"info","message":"Password reset email sent to \"klasaa12b@gmail.com\".","service":"user-service","timestamp":"2024-11-22 19:22:24"}
+{"level":"info","message":"MongoDB connected","service":"user-service","timestamp":"2024-11-22 19:23:44"}
+{"level":"info","message":"Server running on port 5000","service":"user-service","timestamp":"2024-11-22 19:23:44"}
+{"level":"info","message":"Password reset email sent to \"klasaa12b@gmail.com\".","service":"user-service","timestamp":"2024-11-22 19:26:13"}
+{"level":"info","message":"MongoDB connected","service":"user-service","timestamp":"2024-11-22 19:27:09"}
+{"level":"info","message":"Server running on port 5000","service":"user-service","timestamp":"2024-11-22 19:27:09"}
+{"level":"info","message":"MongoDB connected","service":"user-service","timestamp":"2024-11-22 19:28:55"}
+{"level":"info","message":"Server running on port 5000","service":"user-service","timestamp":"2024-11-22 19:28:55"}
+{"level":"info","message":"Password reset email sent to \"klasaa12b@gmail.com\".","service":"user-service","timestamp":"2024-11-22 19:29:03"}
+{"level":"info","message":"MongoDB connected","service":"user-service","timestamp":"2024-11-22 19:32:19"}
+{"level":"info","message":"Server running on port 5000","service":"user-service","timestamp":"2024-11-22 19:32:19"}
+{"level":"info","message":"MongoDB connected","service":"user-service","timestamp":"2024-11-22 19:33:13"}
+{"level":"info","message":"Server running on port 5000","service":"user-service","timestamp":"2024-11-22 19:33:13"}
+{"level":"info","message":"MongoDB connected","service":"user-service","timestamp":"2024-11-22 19:37:05"}
+{"level":"info","message":"Server running on port 5000","service":"user-service","timestamp":"2024-11-22 19:37:05"}
+{"level":"info","message":"MongoDB connected","service":"user-service","timestamp":"2024-11-22 19:37:48"}
+{"level":"info","message":"Server running on port 5000","service":"user-service","timestamp":"2024-11-22 19:37:48"}
+{"level":"info","message":"MongoDB connected","service":"user-service","timestamp":"2024-11-22 19:38:06"}
+{"level":"info","message":"Server running on port 5000","service":"user-service","timestamp":"2024-11-22 19:38:06"}
+{"level":"info","message":"MongoDB connected","service":"user-service","timestamp":"2024-11-22 19:45:35"}
+{"level":"info","message":"Server running on port 5000","service":"user-service","timestamp":"2024-11-22 19:45:35"}
+{"level":"info","message":"Password reset requested for user: klasaa12b@gmail.com","service":"user-service","timestamp":"2024-11-22 19:45:42"}
+{"level":"info","message":"MongoDB connected","service":"user-service","timestamp":"2024-11-22 19:47:29"}
+{"level":"info","message":"Server running on port 5000","service":"user-service","timestamp":"2024-11-22 19:47:29"}
+{"level":"info","message":"MongoDB connected","service":"user-service","timestamp":"2024-11-22 19:48:23"}
+{"level":"info","message":"Server running on port 5000","service":"user-service","timestamp":"2024-11-22 19:48:23"}
+{"level":"info","message":"MongoDB connected","service":"user-service","timestamp":"2024-11-22 19:50:04"}
+{"level":"info","message":"Server running on port 5000","service":"user-service","timestamp":"2024-11-22 19:50:04"}
+{"level":"info","message":"MongoDB connected","service":"user-service","timestamp":"2024-11-22 19:50:12"}
+{"level":"info","message":"Server running on port 5000","service":"user-service","timestamp":"2024-11-22 19:50:12"}
+{"level":"info","message":"MongoDB connected","service":"user-service","timestamp":"2024-11-22 19:50:40"}
+{"level":"info","message":"Server running on port 5000","service":"user-service","timestamp":"2024-11-22 19:50:40"}
+{"level":"info","message":"MongoDB connected","service":"user-service","timestamp":"2024-11-22 19:50:51"}
+{"level":"info","message":"Server running on port 5000","service":"user-service","timestamp":"2024-11-22 19:50:51"}
+{"level":"info","message":"User \"Roberto\" logged in successfully.","service":"user-service","timestamp":"2024-11-22 19:51:42"}
+{"level":"info","message":"User \"Roberto\" logged in successfully.","service":"user-service","timestamp":"2024-11-22 19:53:16"}
+{"level":"info","message":"MongoDB connected","service":"user-service","timestamp":"2024-11-22 19:54:09"}
+{"level":"info","message":"Server running on port 5000","service":"user-service","timestamp":"2024-11-22 19:54:09"}
+{"level":"info","message":"MongoDB connected","service":"user-service","timestamp":"2024-11-22 19:54:25"}
+{"level":"info","message":"Server running on port 5000","service":"user-service","timestamp":"2024-11-22 19:54:25"}
+{"level":"info","message":"MongoDB connected","service":"user-service","timestamp":"2024-11-22 19:54:46"}
+{"level":"info","message":"Server running on port 5000","service":"user-service","timestamp":"2024-11-22 19:54:46"}
+{"level":"info","message":"User \"Roberto\" logged in successfully.","service":"user-service","timestamp":"2024-11-22 19:54:55"}
+{"level":"warn","message":"Login failed: Incorrect password for user \"Roberto\".","service":"user-service","timestamp":"2024-11-22 19:55:06"}
+{"level":"info","message":"User \"Roberto\" logged in successfully.","service":"user-service","timestamp":"2024-11-22 19:55:11"}
+{"level":"info","message":"MongoDB connected","service":"user-service","timestamp":"2024-11-22 21:45:09"}
+{"level":"info","message":"Server running on port 5000","service":"user-service","timestamp":"2024-11-22 21:45:09"}
+{"level":"info","message":"User \"Roberto\" logged in successfully.","service":"user-service","timestamp":"2024-11-22 21:45:48"}
+{"level":"info","message":"MongoDB connected","service":"user-service","timestamp":"2024-11-22 21:55:49"}
+{"level":"info","message":"Server running on port 5000","service":"user-service","timestamp":"2024-11-22 21:55:49"}
+{"level":"info","message":"User \"Roberto\" logged in successfully.","service":"user-service","timestamp":"2024-11-22 21:56:17"}
+{"level":"info","message":"MongoDB connected","service":"user-service","timestamp":"2024-11-22 22:03:03"}
+{"level":"info","message":"Server running on port 5000","service":"user-service","timestamp":"2024-11-22 22:03:03"}
+{"level":"info","message":"MongoDB connected","service":"user-service","timestamp":"2024-11-22 22:03:19"}
+{"level":"info","message":"Server running on port 5000","service":"user-service","timestamp":"2024-11-22 22:03:19"}
+{"level":"warn","message":"Authorization denied: No token provided.","service":"user-service","timestamp":"2024-11-22 22:05:45"}
+{"level":"info","message":"User \"Roberto\" logged in successfully.","service":"user-service","timestamp":"2024-11-22 22:06:23"}
+{"level":"info","message":"User \"Roberto\" logged in successfully.","service":"user-service","timestamp":"2024-11-22 22:06:46"}
+{"level":"warn","message":"Authorization denied: No token provided.","service":"user-service","timestamp":"2024-11-22 22:08:25"}
+{"level":"warn","message":"Authorization denied: No token provided.","service":"user-service","timestamp":"2024-11-22 22:13:38"}
+{"level":"warn","message":"Authorization denied: No token provided.","service":"user-service","timestamp":"2024-11-22 22:13:40"}
+{"level":"warn","message":"Authorization denied: No token provided.","service":"user-service","timestamp":"2024-11-22 22:13:47"}
+{"level":"info","message":"User \"Roberto\" logged in successfully.","service":"user-service","timestamp":"2024-11-22 22:14:03"}
+{"level":"warn","message":"Authorization denied: No token provided.","service":"user-service","timestamp":"2024-11-22 22:16:54"}
+{"level":"warn","message":"Authorization denied: No token provided.","service":"user-service","timestamp":"2024-11-22 22:16:56"}
+{"level":"warn","message":"Authorization denied: No token provided.","service":"user-service","timestamp":"2024-11-22 22:17:08"}
+{"level":"warn","message":"Authorization denied: No token provided.","service":"user-service","timestamp":"2024-11-22 22:17:09"}
+{"level":"info","message":"User \"Roberto\" logged in successfully.","service":"user-service","timestamp":"2024-11-22 22:18:03"}
+{"level":"info","message":"User \"Roberto\" logged in successfully.","service":"user-service","timestamp":"2024-11-22 22:19:47"}
+{"level":"info","message":"MongoDB connected","service":"user-service","timestamp":"2024-11-22 22:22:37"}
+{"level":"info","message":"Server running on port 5000","service":"user-service","timestamp":"2024-11-22 22:22:37"}
+{"level":"info","message":"MongoDB connected","service":"user-service","timestamp":"2024-11-22 22:25:10"}
+{"level":"info","message":"Server running on port 5000","service":"user-service","timestamp":"2024-11-22 22:25:10"}
+{"level":"info","message":"User \"Roberto\" logged in successfully.","service":"user-service","timestamp":"2024-11-22 22:25:28"}
+{"level":"info","message":"User \"Roberto\" logged in successfully.","service":"user-service","timestamp":"2024-11-22 22:25:36"}
+{"level":"info","message":"User \"Roberto\" logged in successfully.","service":"user-service","timestamp":"2024-11-22 22:26:24"}
+{"level":"info","message":"MongoDB connected","service":"user-service","timestamp":"2024-11-22 22:27:17"}
+{"level":"info","message":"Server running on port 5000","service":"user-service","timestamp":"2024-11-22 22:27:17"}
+{"level":"info","message":"MongoDB connected","service":"user-service","timestamp":"2024-11-22 22:27:22"}
+{"level":"info","message":"Server running on port 5000","service":"user-service","timestamp":"2024-11-22 22:27:22"}
+{"level":"info","message":"MongoDB connected","service":"user-service","timestamp":"2024-11-22 22:27:47"}
+{"level":"info","message":"Server running on port 5000","service":"user-service","timestamp":"2024-11-22 22:27:47"}
+{"level":"info","message":"User \"Roberto\" logged in successfully.","service":"user-service","timestamp":"2024-11-22 22:28:27"}
+{"level":"info","message":"MongoDB connected","service":"user-service","timestamp":"2024-11-22 22:30:44"}
+{"level":"info","message":"Server running on port 5000","service":"user-service","timestamp":"2024-11-22 22:30:44"}
+{"level":"info","message":"User \"Roberto\" logged in successfully.","service":"user-service","timestamp":"2024-11-22 22:32:08"}
+{"level":"info","message":"User \"Roberto\" logged in successfully.","service":"user-service","timestamp":"2024-11-22 22:34:49"}
+{"level":"info","message":"MongoDB connected","service":"user-service","timestamp":"2024-11-22 22:46:03"}
+{"level":"info","message":"Server running on port 5000","service":"user-service","timestamp":"2024-11-22 22:46:03"}
+{"level":"info","message":"MongoDB connected","service":"user-service","timestamp":"2024-11-22 22:52:21"}
+{"level":"info","message":"Server running on port 5000","service":"user-service","timestamp":"2024-11-22 22:52:21"}
+{"level":"info","message":"MongoDB connected","service":"user-service","timestamp":"2024-11-22 22:53:31"}
+{"level":"info","message":"Server running on port 5000","service":"user-service","timestamp":"2024-11-22 22:53:31"}
+{"level":"info","message":"MongoDB connected","service":"user-service","timestamp":"2024-11-22 22:53:37"}
+{"level":"info","message":"Server running on port 5000","service":"user-service","timestamp":"2024-11-22 22:53:37"}
+{"level":"info","message":"MongoDB connected","service":"user-service","timestamp":"2024-11-22 22:53:59"}
+{"level":"info","message":"Server running on port 5000","service":"user-service","timestamp":"2024-11-22 22:53:59"}
+{"level":"info","message":"MongoDB connected","service":"user-service","timestamp":"2024-11-22 23:06:38"}
+{"level":"info","message":"Server running on port 5000","service":"user-service","timestamp":"2024-11-22 23:06:38"}
+{"level":"info","message":"MongoDB connected","service":"user-service","timestamp":"2024-11-22 23:09:16"}
+{"level":"info","message":"Server running on port 5000","service":"user-service","timestamp":"2024-11-22 23:09:16"}
+{"level":"info","message":"MongoDB connected","service":"user-service","timestamp":"2024-11-22 23:09:28"}
+{"level":"info","message":"Server running on port 5000","service":"user-service","timestamp":"2024-11-22 23:09:28"}
+{"level":"info","message":"MongoDB connected","service":"user-service","timestamp":"2024-11-22 23:11:36"}
+{"level":"info","message":"Server running on port 5000","service":"user-service","timestamp":"2024-11-22 23:11:36"}
+{"level":"info","message":"MongoDB connected","service":"user-service","timestamp":"2024-11-22 23:11:43"}
+{"level":"info","message":"Server running on port 5000","service":"user-service","timestamp":"2024-11-22 23:11:43"}
+{"level":"warn","message":"Registration failed: Username or email already exists","service":"user-service","timestamp":"2024-11-22 23:26:55"}
+{"level":"info","message":"User registered successfully: Mon","service":"user-service","timestamp":"2024-11-22 23:27:04"}
+{"level":"info","message":"User \"Mon\" email verified successfully.","service":"user-service","timestamp":"2024-11-22 23:27:16"}
+{"level":"info","message":"MongoDB connected","service":"user-service","timestamp":"2024-11-22 23:29:46"}
+{"level":"info","message":"Server running on port 5000","service":"user-service","timestamp":"2024-11-22 23:29:46"}
+{"level":"info","message":"MongoDB connected","service":"user-service","timestamp":"2024-11-22 23:30:10"}
+{"level":"info","message":"Server running on port 5000","service":"user-service","timestamp":"2024-11-22 23:30:10"}
+{"level":"info","message":"MongoDB connected","service":"user-service","timestamp":"2024-11-22 23:30:30"}
+{"level":"info","message":"Server running on port 5000","service":"user-service","timestamp":"2024-11-22 23:30:30"}
+{"level":"info","message":"MongoDB connected","service":"user-service","timestamp":"2024-11-22 23:32:06"}
+{"level":"info","message":"Server running on port 5000","service":"user-service","timestamp":"2024-11-22 23:32:06"}
+{"level":"info","message":"MongoDB connected","service":"user-service","timestamp":"2024-11-22 23:32:23"}
+{"level":"info","message":"Server running on port 5000","service":"user-service","timestamp":"2024-11-22 23:32:23"}
+{"level":"info","message":"MongoDB connected","service":"user-service","timestamp":"2024-11-22 23:35:05"}
+{"level":"info","message":"Server running on port 5000","service":"user-service","timestamp":"2024-11-22 23:35:05"}
+{"level":"info","message":"MongoDB connected","service":"user-service","timestamp":"2024-11-22 23:35:34"}
+{"level":"info","message":"Server running on port 5000","service":"user-service","timestamp":"2024-11-22 23:35:34"}
+{"level":"info","message":"MongoDB connected","service":"user-service","timestamp":"2024-11-22 23:36:28"}
+{"level":"info","message":"Server running on port 5000","service":"user-service","timestamp":"2024-11-22 23:36:28"}
+{"level":"info","message":"MongoDB connected","service":"user-service","timestamp":"2024-11-22 23:36:45"}
+{"level":"info","message":"Server running on port 5000","service":"user-service","timestamp":"2024-11-22 23:36:45"}
+{"level":"info","message":"MongoDB connected","service":"user-service","timestamp":"2024-11-22 23:36:55"}
+{"level":"info","message":"Server running on port 5000","service":"user-service","timestamp":"2024-11-22 23:36:55"}
+{"level":"info","message":"MongoDB connected","service":"user-service","timestamp":"2024-11-22 23:38:11"}
+{"level":"info","message":"Server running on port 5000","service":"user-service","timestamp":"2024-11-22 23:38:11"}
+{"level":"info","message":"User \"Roberto\" logged in successfully.","service":"user-service","timestamp":"2024-11-22 23:42:14"}
+{"level":"info","message":"MongoDB connected","service":"user-service","timestamp":"2024-11-24 21:02:06"}
+{"level":"info","message":"Server running on port 5000","service":"user-service","timestamp":"2024-11-24 21:02:06"}
+{"level":"warn","message":"Login failed: Incorrect password for user \"Roberto\".","service":"user-service","timestamp":"2024-11-24 21:02:23"}
+{"level":"info","message":"User \"Roberto\" logged in successfully.","service":"user-service","timestamp":"2024-11-24 21:02:24"}
+{"level":"info","message":"MongoDB connected","service":"user-service","timestamp":"2024-11-24 21:09:29"}
+{"level":"info","message":"Server running on port 5000","service":"user-service","timestamp":"2024-11-24 21:09:29"}
+{"level":"info","message":"MongoDB connected","service":"user-service","timestamp":"2024-11-24 21:10:31"}
+{"level":"info","message":"Server running on port 5000","service":"user-service","timestamp":"2024-11-24 21:10:31"}
