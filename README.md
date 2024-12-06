@@ -49,14 +49,14 @@ This is a full-stack project built for creating and managing events with user au
 ### Steps
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/your-repo-name.git
-   cd your-repo-name
+   git clone https://github.com/Engineering-Class/event-social-media.git
+   cd event-social-media
    ```
 
 2. Install dependencies:
    ```bash
    npm install
-   cd client
+   cd frontend
    npm install
    cd ..
    ```
