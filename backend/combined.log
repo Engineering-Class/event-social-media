@@ -160,3 +160,16 @@
 {"level":"info","message":"Server running on port 5000","service":"user-service","timestamp":"2024-11-24 21:09:29"}
 {"level":"info","message":"MongoDB connected","service":"user-service","timestamp":"2024-11-24 21:10:31"}
 {"level":"info","message":"Server running on port 5000","service":"user-service","timestamp":"2024-11-24 21:10:31"}
+{"level":"info","message":"MongoDB connected","service":"user-service","timestamp":"2024-12-09 13:43:09"}
+{"level":"info","message":"Server running on port 5000","service":"user-service","timestamp":"2024-12-09 13:43:09"}
+{"level":"warn","message":"Login failed: Incorrect password for user \"Roberto\".","service":"user-service","timestamp":"2024-12-09 13:43:15"}
+{"level":"warn","message":"Login failed: Incorrect password for user \"Roberto\".","service":"user-service","timestamp":"2024-12-09 13:43:17"}
+{"level":"warn","message":"Login failed: Incorrect password for user \"Roberto\".","service":"user-service","timestamp":"2024-12-09 13:43:21"}
+{"level":"info","message":"User \"Roberto\" logged in successfully.","service":"user-service","timestamp":"2024-12-09 13:43:24"}
+{"level":"info","message":"User \"Roberto\" logged in successfully.","service":"user-service","timestamp":"2024-12-09 13:43:57"}
+{"level":"info","message":"User \"Mon\" logged in successfully.","service":"user-service","timestamp":"2024-12-09 13:44:52"}
+{"level":"info","message":"User \"Roberto\" logged in successfully.","service":"user-service","timestamp":"2024-12-09 13:45:32"}
+{"level":"info","message":"User \"Roberto\" logged in successfully.","service":"user-service","timestamp":"2024-12-09 13:49:06"}
+{"level":"info","message":"User \"Mon\" logged in successfully.","service":"user-service","timestamp":"2024-12-09 13:49:57"}
+{"level":"info","message":"User \"Roberto\" logged in successfully.","service":"user-service","timestamp":"2024-12-09 13:50:23"}
+{"level":"info","message":"User \"Mon\" logged in successfully.","service":"user-service","timestamp":"2024-12-09 13:51:22"}
