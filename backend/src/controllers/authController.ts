@@ -245,3 +245,35 @@ export const searchUsers = async (req: Request, res: Response) => {
     res.status(500).json({ message: 'Failed to search users.' });
   }
 };
+
+export const updateUser = async (req: Request, res: Response) => {
+  try {
+    const { username, email, password } = req.body;
+    const userId = req.user._id; // Assuming you have user in request from protect middleware
+
+    const user = await User.findById(userId);
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
+    if (username) user.username = username;
+    if (email) user.email = email;
+    if (password) user.password = password; // Make sure to hash the password
+
+    await user.save();
+
+    // Generate new token
+    const token = generateToken(user._id); 
+
+    res.json({
+      token,
+      user: {
+        _id: user._id,
+        username: user.username,
+        email: user.email
+      }
+    });
+  } catch (error) {
+    res.status(400).json({ message: 'Error updating user' });
+  }
+};

@@ -125,21 +125,27 @@ const FriendsAndProfilePage: React.FC = () => {
     }
   };
 
-  // Update profile
+
   const handleProfileUpdate = async () => {
     try {
-      const response = await axiosInstance.put('/auth/profile', {
+      const response = await axiosInstance.put('/auth/update-user', {
         username: updatedUsername,
         email: updatedEmail,
         password: password || undefined,
       });
-      login(response.data.token, response.data.user); // Update the context with new user details
+      
+      login(response.data.token, response.data.user);
       setEditing(false);
-    } catch (error) {
+      setSnackbarMessage('Profile updated successfully!');
+      setSnackbarSeverity('success');
+      setSnackbarOpen(true);
+    } catch (error: any) {
       console.error('Failed to update profile:', error);
+      setSnackbarMessage(error.response?.data?.message || 'Failed to update profile');
+      setSnackbarSeverity('error');
+      setSnackbarOpen(true);
     }
   };
-
   return (
     <Box sx={{ padding: 4 }}>
       <Typography variant="h4" gutterBottom align="center">
