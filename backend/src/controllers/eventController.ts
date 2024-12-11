@@ -4,38 +4,72 @@ import User from '../models/User';
 import sharp from 'sharp';
 import path from 'path';
 import fs from 'fs';
+import nodemailer from 'nodemailer'; // Import nodemailer
 
 export const createEvent = async (req: Request, res: Response) => {
-  const { name, description, date, time } = req.body;
+  const { name, description, date, time, invitedFriends } = req.body;
 
   try {
+    // Handle image upload and resizing
     let image = null;
-
     if (req.file) {
       const fileName = `${Date.now()}-${req.file.originalname}`;
       const outputPath = path.join('uploads', fileName);
 
-      // Resize the image using Sharp
       await sharp(req.file.path)
-        .resize(300, 200, { fit: 'cover' }) // Set dimensions (800x600 as an example)
-        .toFormat('jpeg') // Convert to JPEG for consistency
-        .jpeg({ quality: 80 }) // Adjust quality to 80%
+        .resize(300, 200, { fit: 'cover' })
+        .toFormat('jpeg')
+        .jpeg({ quality: 80 })
         .toFile(outputPath);
 
-      // Remove the original uploaded file to save storage
       fs.unlinkSync(req.file.path);
 
       image = `uploads/${fileName}`;
     }
 
+    // Parse invited friends to ensure it's an array of ObjectIds
+    const parsedInvitedFriends = invitedFriends ? JSON.parse(invitedFriends) : [];
+
+    // Create the new event
     const newEvent = await Event.create({
       name,
       description,
       date,
       time,
-      image, // Save resized image path
+      image,
       createdBy: req.user?._id,
+      invitedFriends: parsedInvitedFriends,
     });
+
+    // Fetch email addresses of invited friends
+    if (parsedInvitedFriends.length > 0) {
+      const friends = await User.find({ _id: { $in: parsedInvitedFriends } }).select('email username');
+
+      const transporter = nodemailer.createTransport({
+        host: process.env.EMAIL_HOST || 'smtp.gmail.com',
+        port: Number(process.env.EMAIL_PORT) || 465,
+        secure: Number(process.env.EMAIL_PORT) === 465,
+        auth: {
+          user: process.env.EMAIL_USER,
+          pass: process.env.EMAIL_PASS,
+        },
+      });
+
+      for (const friend of friends) {
+        await transporter.sendMail({
+          from: process.env.EMAIL_USER,
+          to: friend.email,
+          subject: `You're Invited to an Event!`,
+          html: `
+            <p>Hello ${friend.username},</p>
+            <p>You have been invited to the event: <strong>${name}</strong>.</p>
+            <p>Description: ${description}</p>
+            <p>Date: ${new Date(date).toLocaleString()} Time: ${time}</p>
+            <p>Log in to your account to view more details!</p>
+          `,
+        });
+      }
+    }
 
     res.status(201).json(newEvent);
   } catch (error) {
@@ -44,26 +78,21 @@ export const createEvent = async (req: Request, res: Response) => {
   }
 };
 
-
 export const getEvents = async (req: Request, res: Response) => {
   try {
-    const { year, month } = req.query;
-    const user = await User.findById(req.user?._id).populate('friends', '_id');
+    const year = req.query.year ? Number(req.query.year) : new Date().getFullYear();
+    const month = req.query.month ? Number(req.query.month) : new Date().getMonth() + 1;
 
-    if (!user) {
-      return res.status(404).json({ message: 'User not found.' });
-    }
-
-    const friendIds = user.friends.map((friend: any) => friend._id);
-    const userAndFriendIds = [req.user?._id, ...friendIds]; // Include the user and their friends
-
-    const startDate = new Date(Number(year), Number(month) - 1, 1);
-    const endDate = new Date(Number(year), Number(month), 0);
+    const startDate = new Date(year, month - 1, 1);
+    const endDate = new Date(year, month, 0);
 
     const events = await Event.find({
+      $or: [
+        { createdBy: req.user?._id }, // Include user's own events
+        { invitedFriends: { $in: [req.user?._id] } }, // Include events where the user is invited
+      ],
       date: { $gte: startDate, $lte: endDate },
-      createdBy: { $in: userAndFriendIds }, // Restrict events to user's circle
-    }).populate('createdBy', 'username email');
+    }).populate('createdBy', 'username email').populate('invitedFriends', 'username email');
 
     res.status(200).json({ events });
   } catch (error) {
@@ -71,6 +100,7 @@ export const getEvents = async (req: Request, res: Response) => {
     res.status(500).json({ message: 'Failed to fetch events.' });
   }
 };
+
 
 export const getEventFeed = async (req: Request, res: Response) => {
   try {
