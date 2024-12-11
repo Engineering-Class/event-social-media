@@ -1,24 +1,54 @@
 import React, { useState } from 'react';
 import axiosInstance from '../api/axiosInstance';
-import { Box, TextField, Button, Typography } from '@mui/material';
+import {
+  Box,
+  TextField,
+  Button,
+  Typography,
+  InputLabel,
+  MenuItem,
+  Select,
+  FormControl,
+} from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
 const EventCreationPage: React.FC = () => {
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   const [date, setDate] = useState('');
+  const [time, setTime] = useState('');
+  const [image, setImage] = useState<File | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
   const navigate = useNavigate();
 
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files[0]) {
+      setImage(e.target.files[0]);
+    }
+  };
+
   const handleCreateEvent = async () => {
-    if (!name || !description || !date) {
+    if (!name || !description || !date || !time) {
       setError('All fields are required');
       return;
     }
 
+    const formData = new FormData();
+    formData.append('name', name);
+    formData.append('description', description);
+    formData.append('date', date);
+    formData.append('time', time);
+    if (image) {
+      formData.append('image', image);
+    }
+
     try {
-      await axiosInstance.post('/events/create', { name, description, date });
+      await axiosInstance.post('/events/create', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      });
       setSuccess(true);
       setTimeout(() => navigate('/calendar'), 2000);
     } catch (error) {
@@ -59,6 +89,24 @@ const EventCreationPage: React.FC = () => {
         sx={{ marginBottom: 2 }}
         InputLabelProps={{ shrink: true }}
       />
+      <TextField
+        label="Time"
+        type="time"
+        value={time}
+        onChange={(e) => setTime(e.target.value)}
+        fullWidth
+        sx={{ marginBottom: 2 }}
+        InputLabelProps={{ shrink: true }}
+      />
+      <Button variant="contained" component="label" >
+        Upload Picture
+        <input type="file" hidden accept="image/*" onChange={handleImageChange} />
+      </Button>
+      {image && (
+        <Typography variant="body2" sx={{ marginBottom: 2 }}>
+          Selected Image: {image.name}
+        </Typography>
+      )}
       <Button variant="contained" color="primary" onClick={handleCreateEvent}>
         Create Event
       </Button>

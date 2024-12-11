@@ -25,34 +25,37 @@ export const sendFriendRequest = async (req: Request, res: Response) => {
   const { userId } = req.body;
 
   if (!userId) {
-    return res.status(400).json({ message: 'User ID is required.' });
+    return res.status(400).json({ message: 'User ID is required' });
   }
 
   try {
-    const user = await User.findById(req.user?._id);
-    const recipient = await User.findById(userId);
-
-    if (!user || !recipient) {
-      return res.status(404).json({ message: 'User not found.' });
+    const targetUser = await User.findById(userId);
+    if (!targetUser) {
+      return res.status(404).json({ message: 'User not found' });
     }
 
-    if (recipient.friendRequests.includes(user._id)) {
-      return res.status(400).json({ message: 'Friend request already sent.' });
+    const currentUser = await User.findById(req.user?._id);
+    if (!currentUser) {
+      return res.status(404).json({ message: 'Current user not found' });
     }
 
-    if (recipient.friends.includes(user._id)) {
-      return res.status(400).json({ message: 'You are already friends.' });
+    if (currentUser.friends.includes(userId)) {
+      return res.status(400).json({ message: 'User is already your friend' });
     }
 
-    recipient.friendRequests.push(user._id);
-    await recipient.save();
+    // Add friend request logic
+    if (!targetUser.friendRequests.includes(req.user?._id)) {
+      targetUser.friendRequests.push(req.user?._id);
+      await targetUser.save();
+    }
 
-    res.status(200).json({ message: 'Friend request sent successfully.' });
+    res.status(200).json({ message: 'Friend request sent successfully' });
   } catch (error) {
     console.error('Send Friend Request Error:', error);
-    res.status(500).json({ message: 'Failed to send friend request.' });
+    res.status(500).json({ message: 'Server error' });
   }
 };
+
 
 // Accept friend request
 export const acceptFriendRequest = async (req: Request, res: Response) => {

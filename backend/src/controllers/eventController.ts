@@ -1,15 +1,39 @@
 import { Request, Response } from 'express';
 import Event, { IEvent } from '../models/Event';
 import User from '../models/User';
-// Create a new event
+import sharp from 'sharp';
+import path from 'path';
+import fs from 'fs';
+
 export const createEvent = async (req: Request, res: Response) => {
-  const { name, description, date } = req.body;
+  const { name, description, date, time } = req.body;
 
   try {
+    let image = null;
+
+    if (req.file) {
+      const fileName = `${Date.now()}-${req.file.originalname}`;
+      const outputPath = path.join('uploads', fileName);
+
+      // Resize the image using Sharp
+      await sharp(req.file.path)
+        .resize(300, 200, { fit: 'cover' }) // Set dimensions (800x600 as an example)
+        .toFormat('jpeg') // Convert to JPEG for consistency
+        .jpeg({ quality: 80 }) // Adjust quality to 80%
+        .toFile(outputPath);
+
+      // Remove the original uploaded file to save storage
+      fs.unlinkSync(req.file.path);
+
+      image = `uploads/${fileName}`;
+    }
+
     const newEvent = await Event.create({
       name,
       description,
       date,
+      time,
+      image, // Save resized image path
       createdBy: req.user?._id,
     });
 
@@ -20,16 +44,25 @@ export const createEvent = async (req: Request, res: Response) => {
   }
 };
 
+
 export const getEvents = async (req: Request, res: Response) => {
   try {
-    const year = req.query.year ? Number(req.query.year) : new Date().getFullYear();
-    const month = req.query.month ? Number(req.query.month) : new Date().getMonth() + 1;
+    const { year, month } = req.query;
+    const user = await User.findById(req.user?._id).populate('friends', '_id');
 
-    const startDate = new Date(year, month - 1, 1);
-    const endDate = new Date(year, month, 0);
+    if (!user) {
+      return res.status(404).json({ message: 'User not found.' });
+    }
+
+    const friendIds = user.friends.map((friend: any) => friend._id);
+    const userAndFriendIds = [req.user?._id, ...friendIds]; // Include the user and their friends
+
+    const startDate = new Date(Number(year), Number(month) - 1, 1);
+    const endDate = new Date(Number(year), Number(month), 0);
 
     const events = await Event.find({
       date: { $gte: startDate, $lte: endDate },
+      createdBy: { $in: userAndFriendIds }, // Restrict events to user's circle
     }).populate('createdBy', 'username email');
 
     res.status(200).json({ events });
@@ -40,30 +73,27 @@ export const getEvents = async (req: Request, res: Response) => {
 };
 
 export const getEventFeed = async (req: Request, res: Response) => {
-    try {
-      // Fetch user's friends
-      const user = await User.findById(req.user?._id).populate('friends', '_id');
-  
-      if (!user) {
-        return res.status(404).json({ message: 'User not found.' });
-      }
-  
-      const friendIds = user.friends.map((friend: any) => friend._id); // Ensure `friends` is populated
-  
-      // Fetch events created by the user and their friends
-      const events = await Event.find({
-        createdBy: { $in: [req.user?._id, ...friendIds] },
-      })
-        .populate('createdBy', 'username email')
-        .sort({ date: -1 });
-  
-      res.status(200).json({ events });
-    } catch (error) {
-      console.error('Get Event Feed Error:', error);
-      res.status(500).json({ message: 'Failed to fetch events.' });
+  try {
+    const user = await User.findById(req.user?._id).populate('friends', '_id');
+    if (!user) {
+      return res.status(404).json({ message: 'User not found.' });
     }
-  };
-  
+
+    const friendIds = user.friends.map((friend: any) => friend._id);
+
+    const events = await Event.find({
+      createdBy: { $in: [req.user?._id, ...friendIds] },
+    })
+      .populate('createdBy', 'username email')
+      .sort({ date: -1 });
+
+    res.status(200).json({ events });
+  } catch (error) {
+    console.error('Get Event Feed Error:', error);
+    res.status(500).json({ message: 'Failed to fetch events.' });
+  }
+};
+
 // Delete an event
 export const deleteEvent = async (req: Request, res: Response) => {
   const { id } = req.params;
